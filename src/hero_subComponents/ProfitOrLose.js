@@ -1,11 +1,14 @@
 import React from 'react'
+import one from "../assets/one.png"
+import two from "../assets/two.png"
 import three from "../assets/three.png"
+import four from "../assets/four.png"
 export const ProfitOrLose = () => {
   return (
     <div class="flex flex-row justify-evenly mt-10">
           <div class="flex items-center flex-row justify-evenly  w-64 h-[10rem] rounded bg-gray-50 dark:bg-white">
             <div className=" bg-green-300 w-[7rem] h-[7rem] rounded-[100rem]">
-
+            <img src={one} alt="three" className='align-baseline m-4'/>
             </div>
             <div className="flex flex-col">
               <p className=' text-sm text-gray-500'>Earning</p>
@@ -22,7 +25,7 @@ export const ProfitOrLose = () => {
 
           <div class="flex items-center flex-row justify-evenly  w-64 h-[10rem] rounded bg-gray-50 dark:bg-white">
             <div className=" bg-purple-300 w-[7rem] h-[7rem] rounded-[100rem]">
-
+            <img src={two} alt="three" className='align-baseline m-4'/>
             </div>
             <div className="flex flex-col">
               <p className=' text-sm text-gray-500'>Orders</p>
@@ -56,7 +59,7 @@ export const ProfitOrLose = () => {
 
           <div class="flex items-center flex-row justify-evenly  w-64 h-[10rem] rounded bg-gray-50 dark:bg-white">
             <div className=" bg-rose-300 w-[7rem] h-[7rem] rounded-[100rem]">
-
+            <img src={four} alt="three" className='align-baseline m-6 w-[4rem] h-[4rem]'/>
             </div>
             <div className="flex flex-col">
               <p className=' text-sm text-gray-500'>Total Sales</p>

@@ -15,7 +15,7 @@ export const Name_n_seacrch = () => {
                 </svg>
               </button>
             </span>
-            <input type="search" name="Search" placeholder="Search..." className="w-full py-2 pl-10 text-sm dark:border-transparent rounded-md focus:outline-non bg-gray-300 text-gray-700 focus:dark:bg-gray-900" />
+            <input type="search" name="Search" placeholder="Search..." className="w-full py-2 pl-10 text-sm dark:border-transparent rounded-md focus:outline-non bg-white text-gray-300 focus:dark:bg-gray-900" />
           </div>
 
         </div>

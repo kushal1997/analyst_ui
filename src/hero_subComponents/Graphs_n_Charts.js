@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ReactEcharts from 'echarts-for-react';
 
 export const Graphs_n_Charts = () => {
-    const data = [37500, 45500, 47500, 1000, 47500, 55000, 60000, 57500, 67500, 65000, 70000, 57000];
+    const data = [37500, 45500, 47500, 27000, 47500, 55000, 60000, 57500, 67500, 65000, 70000, 57000];
     const max = Math.max(...data);
 
     const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
@@ -27,7 +27,7 @@ export const Graphs_n_Charts = () => {
 
 <div className=" flex flex-row justify-between">
             {/* Component Start */}
-            <div className="flex flex-col  w-[75%] max-w-screen-md p-6 pb-6 mt-4 ml-2 bg-white rounded-lg shadow-xl sm:p-8">
+            <div className="flex flex-col  w-[65%] max-w-screen-md p-6 pb-6 mt-4 ml-2 bg-white rounded-lg shadow-xl sm:p-8">
                 <div className=" flex flex-row justify-between">
                     <div className=" flex flex-col">
                         <h2 className="text-xl font-bold float-left">Overview</h2>
@@ -47,7 +47,7 @@ export const Graphs_n_Charts = () => {
                                 ${object.price}
                             </span>
                             <div
-                                className={`relative flex justify-center w-full bg-indigo-200 hover:bg-indigo-500 rounded-xl ${object.month === 'Aug' ? 'bg-indigo-700' : ''}`}
+                                className={`relative flex justify-center w-10 bg-indigo-200 hover:bg-indigo-500 rounded-xl ${object.month === 'Aug' ? 'bg-indigo-700' : ''}`}
                                 style={{
 
                                     height: `${object.percentageInPixels}px`,
@@ -65,17 +65,12 @@ export const Graphs_n_Charts = () => {
             {/* Component End  */}
 
             <div className="flex flex-col justify-between w-[30%] max-w-screen-md p-6 pb-6 mt-4 ml-2 bg-white rounded-lg shadow-xl sm:p-8">
+                <div>
+                    <h1 className=" font-bold text-xl">Customers</h1>
+                    <p className=" text-gray-400">Customers that buy projects</p>
+                </div>
                 <ReactEcharts
                     option={{
-                        // tooltip: {
-                        //     trigger: 'item',
-                        //     formatter: '{a} <br/>{b}: {c} ({d}%)'
-                        // },
-                        // legend: {
-                        //     orient: 'vertical',
-                        //     left: 10,
-                        //     data: ['Mon', 'Tues', 'Wed', 'Thurs', 'Fri']
-                        // },
                         series: [
                             {
                                 name: 'Utilization',
