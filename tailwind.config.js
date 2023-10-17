@@ -4,15 +4,16 @@ module.exports = {
  theme: {
     screens: {
       // New media queries:
-      'mm': {
-        only: 'screen',
-        max: '426px',
-        min: '375px',
-      },
+      
       'sm': {
         only: 'screen',
         max: '374px',
         min: '320px',
+      },
+      'mm': {
+        only: 'screen',
+        max: '426px',
+        min: '375px',
       },
       'tb': {
         only: 'screen',
