@@ -27,7 +27,7 @@ export const Graphs_n_Charts = () => {
 
 <div className=" flex flex-row justify-between sm:flex-col">
             {/* Component Start */}
-            <div className="flex flex-col  w-[65%] sm:w-full max-w-screen-md p-6 pb-6 mt-4 ml-2 bg-white rounded-lg shadow-xl sm:p-8">
+            <div className="flex flex-col  w-[65%] sm:w-full max-w-screen-md p-6 sm:p-2 pb-6 sm:ml-0 mt-4 ml-2 bg-white rounded-lg shadow-xl">
                 <div className=" flex flex-row justify-between">
                     <div className=" flex flex-col">
                         <h2 className="text-xl font-bold float-left">Overview</h2>

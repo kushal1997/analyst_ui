@@ -2,8 +2,8 @@ import React from 'react'
 import p1 from "../assets/p1.jpg"
 export const ProductSell = () => {
   return (
-    <div className="flex flex-col  w-[full] max-w-screen-md p-6 pb-6 mt-4 ml-2 bg-white rounded-lg shadow-xl sm:p-8">
-      <div className="flex flex-row justify-between">
+    <div className="flex flex-col  w-[full] max-w-screen-md p-6 pb-6 mt-4 ml-2 bg-white rounded-lg shadow-xl sm:p-2">
+      <div className="flex flex-row sm:flex-col sm:mb-2 justify-between">
         <div className="flex flex-row  justify-around">
           <p className=' font-bold text-lg'>Product Sell</p>
         </div>
@@ -24,65 +24,65 @@ export const ProductSell = () => {
             <option value="monthly">Last 1 Year</option>
           </select>
         </div>
-
-
       </div>
 
       <div className='flex flex-row justify-between mt-4 text-gray-500 border-b border-gray-300'>
-        <p>Product Name</p>
-        <div className='flex flex-row justify-between w-[25%]'>
+        <p className=' sm:mt-6'>Product Name</p>
+        <div className='flex flex-row sm:flex-col justify-between w-[25%] sm:w-[33%] sm:mb-1'>
           <p>Stock</p>
           <p>Price</p>
           <p>Total Sales</p>
         </div>
       </div>
 
-      <div className=' mt-5 flex flex-row justify-between align-baseline'>
-        <div className='flex flex-row'>
-          <img className=' w-[8rem] h-[4rem] rounded-lg' src={p1} alt="p1" />
+      <div className=' mt-5 flex flex-row justify-between align-baseline sm:mb-2'>
+        <div className='flex flex-row sm:flex-col align-baseline'>
+          <img className=' w-[8rem] h-[4rem] sm:w-[5rem] sm:h-[3rem] sm:ml-3 rounded-lg' src={p1} alt="p1" />
           <div className="flex flex-col ml-4">
             <h1 className=' font-bold'>Abstract 3D</h1>
-            <p className=' text-gray-400 text-sm'>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p className=' text-gray-400 text-sm sm:text-xs sm:mr-2'>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
           </div>
         </div>
-        <div className="flex flex-row justify-between w-[25%] mr-4">
-          <p>32 in stock</p>
-          <p className=' mr-[41px] font-bold'>$45.95</p>
-          <p className=' mr-[16px]'>20</p>
+        <div className="flex flex-row sm:flex-col justify-between w-[25%] sm:w-[33%] sm:items-center mr-4">
+          <p className=' sm:text-sm'>32 in stock</p>
+          <p className=' mr-[41px] sm:mr-[17px] font-bold'>$45.95</p>
+          <p className=' mr-[16px] sm:m-0 sm:text-sm'>20</p>
         </div>
       </div>
+      <hr />
 
-      <div className=' mt-5 flex flex-row justify-between align-baseline'>
-        <div className='flex flex-row'>
-          <img className=' w-[8rem] h-[4rem] rounded-lg' src={p1} alt="p1" />
+      <div className=' mt-5 flex flex-row justify-between align-baseline sm:mb-2'>
+        <div className='flex flex-row sm:flex-col align-baseline'>
+          <img className=' w-[8rem] h-[4rem] sm:w-[5rem] sm:h-[3rem] sm:ml-3 rounded-lg' src={p1} alt="p1" />
           <div className="flex flex-col ml-4">
             <h1 className=' font-bold'>Abstract 3D</h1>
-            <p className=' text-gray-400 text-sm'>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p className=' text-gray-400 text-sm sm:text-xs sm:mr-2'>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
           </div>
         </div>
-        <div className="flex flex-row justify-between w-[25%] mr-4">
-          <p>32 in stock</p>
-          <p className=' mr-[41px] font-bold'>$45.95</p>
-          <p className=' mr-[16px]'>20</p>
+        <div className="flex flex-row sm:flex-col justify-between w-[25%] sm:w-[33%] sm:items-center mr-4">
+          <p className=' sm:text-sm'>32 in stock</p>
+          <p className=' mr-[41px] sm:mr-[17px] font-bold'>$45.95</p>
+          <p className=' mr-[16px] sm:m-0 sm:text-sm'>20</p>
         </div>
       </div>
+      <hr />
 
 
-      <div className=' mt-5 flex flex-row justify-between align-baseline'>
-        <div className='flex flex-row'>
-          <img className=' w-[8rem] h-[4rem] rounded-lg' src={p1} alt="p1" />
+      <div className=' mt-5 flex flex-row justify-between align-baseline sm:mb-2'>
+        <div className='flex flex-row sm:flex-col align-baseline'>
+          <img className=' w-[8rem] h-[4rem] sm:w-[5rem] sm:h-[3rem] sm:ml-3 rounded-lg' src={p1} alt="p1" />
           <div className="flex flex-col ml-4">
             <h1 className=' font-bold'>Abstract 3D</h1>
-            <p className=' text-gray-400 text-sm'>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p className=' text-gray-400 text-sm sm:text-xs sm:mr-2'>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
           </div>
         </div>
-        <div className="flex flex-row justify-between w-[25%] mr-4">
-          <p>32 in stock</p>
-          <p className=' mr-[41px] font-bold'>$45.95</p>
-          <p className=' mr-[16px]'>20</p>
+        <div className="flex flex-row sm:flex-col justify-between w-[25%] sm:w-[33%] sm:items-center mr-4">
+          <p className=' sm:text-sm'>32 in stock</p>
+          <p className=' mr-[41px] sm:mr-[17px] font-bold'>$45.95</p>
+          <p className=' mr-[16px] sm:m-0 sm:text-sm'>20</p>
         </div>
       </div>
-
+<hr />
       
     </div>
   )
