@@ -6,7 +6,7 @@ import { AllRoutes } from './routes/AllRoutes';
 function App() {
   return (
     <Fragment>
-  <div className="flex flex-row">
+  <div className="flex flex-row sm:flex-col mm:flex-col">
   <Sidebar/>
   <AllRoutes/>
   </div>
