@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const Name_n_seacrch = () => {
+export const NameAndSearch = () => {
   return (
     <div className="flex flex-row justify-between sm:flex-col mm:flex-col">
           <div className="flex flex-row w-[10rem] justify-around">
@@ -17,7 +17,6 @@ export const Name_n_seacrch = () => {
             </span>
             <input type="search" name="Search" placeholder="Search..." className="w-full py-2 pl-10 text-sm dark:border-transparent rounded-md focus:outline-non bg-white text-gray-300 focus:dark:bg-gray-900" />
           </div>
-
         </div>
   )
 }
