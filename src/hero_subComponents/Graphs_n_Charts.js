@@ -25,9 +25,9 @@ export const Graphs_n_Charts = () => {
     return (
         <>
 
-<div className=" flex flex-row justify-between sm:flex-col">
+<div className=" flex flex-row justify-between sm:flex-col mm:flex-col">
             {/* Component Start */}
-            <div className="flex flex-col  w-[65%] sm:w-full max-w-screen-md p-6 sm:p-2 pb-6 sm:ml-0 mt-4 ml-2 bg-white rounded-lg shadow-xl">
+            <div className="flex flex-col  w-[65%] sm:w-full mm:w-full max-w-screen-md p-6 sm:p-2 mm:p-2 pb-6 sm:ml-0 mm:ml-0 mt-4 ml-2 bg-white rounded-lg shadow-xl">
                 <div className=" flex flex-row justify-between">
                     <div className=" flex flex-col">
                         <h2 className="text-xl font-bold float-left">Overview</h2>
@@ -40,7 +40,7 @@ export const Graphs_n_Charts = () => {
                     </select>
 
                 </div>
-                <div className="flex items-end flex-grow w-full mt-2 space-x-2 sm:space-x-3" style={{ overflowX: 'auto', whiteSpace: 'nowrap' }}>
+                <div className="flex items-end flex-grow w-full mt-2 space-x-2 sm:space-x-3 mm:space-x-3" style={{ overflowX: 'auto', whiteSpace: 'nowrap' }}>
                     {objects.map((object, index) => (
                         <div className="relative flex flex-col items-center flex-grow pb-5 group" key={object.id}>
                             <span className="absolute top-0 hidden -mt-6 text-xs font-bold group-hover:block">
@@ -64,7 +64,7 @@ export const Graphs_n_Charts = () => {
             </div>
             {/* Component End  */}
 
-            <div className="flex flex-col justify-between w-[30%] sm:w-full sm: max-w-screen-md p-6 pb-6 mt-4 ml-2 bg-white rounded-lg shadow-xl sm:p-8">
+            <div className="flex flex-col justify-between w-[30%] sm:w-full mm:w-full max-w-screen-md p-6 pb-6 mt-4 ml-2 bg-white rounded-lg shadow-xl sm:p-8 mm:p-8">
                 <div>
                     <h1 className=" font-bold text-xl">Customers</h1>
                     <p className=" text-gray-400">Customers that buy projects</p>

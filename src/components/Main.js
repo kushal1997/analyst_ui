@@ -7,7 +7,7 @@ import { ProductSell } from '../hero_subComponents/ProductSell'
 export const Main = () => {
   return (
     <div class="p-6 ml-[11rem] sm:ml-0 mm:ml-0 bg-slate-100 w-full">
-      <div class="p-4 sm:p-1 rounded-lg dark:border-gray-700">
+      <div class="p-4 sm:p-1 mm:p-1 rounded-lg dark:border-gray-700">
         <Name_n_seacrch/>
         <ProfitOrLose/>
         <Graphs_n_Charts/>

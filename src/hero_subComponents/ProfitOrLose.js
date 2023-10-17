@@ -5,8 +5,8 @@ import three from "../assets/three.png"
 import four from "../assets/four.png"
 export const ProfitOrLose = () => {
   return (
-    <div class="flex flex-row justify-evenly mt-10 sm:flex-col ">
-          <div class="flex items-center flex-row justify-evenly sm:my-2 w-64 h-[10rem] rounded bg-gray-50 dark:bg-white">
+    <div class="flex flex-row justify-evenly mm:justify-center mm:items-center mt-10 sm:flex-col mm:flex-col ">
+          <div class="flex items-center flex-row justify-evenly sm:my-2 mm:my-2 w-64 h-[10rem] rounded bg-gray-50 dark:bg-white">
             <div className=" bg-green-300 w-[7rem] h-[7rem] rounded-[100rem]">
             <img src={one} alt="three" className='align-baseline m-4'/>
             </div>
@@ -23,7 +23,7 @@ export const ProfitOrLose = () => {
             </div>
           </div>
 
-          <div class="flex items-center flex-row justify-evenl sm:my-2  w-64 h-[10rem] rounded bg-gray-50 dark:bg-white">
+          <div class="flex items-center flex-row justify-evenl sm:my-2  mm:my-2 w-64 h-[10rem] rounded bg-gray-50 dark:bg-white">
             <div className=" bg-purple-300 w-[7rem] h-[7rem] rounded-[100rem]">
             <img src={two} alt="three" className='align-baseline m-4'/>
             </div>
@@ -40,7 +40,7 @@ export const ProfitOrLose = () => {
             </div>
           </div>
 
-          <div class="flex items-center flex-row justify-evenly sm:my-2 w-64 h-[10rem] rounded bg-gray-50 dark:bg-white">
+          <div class="flex items-center flex-row justify-evenly sm:my-2  mm:my-2 w-64 h-[10rem] rounded bg-gray-50 dark:bg-white">
             <div className=" bg-sky-300 w-[7rem] h-[7rem] rounded-[100rem]">
            <img src={three} alt="three" className='align-baseline m-6'/>
             </div>
@@ -57,7 +57,7 @@ export const ProfitOrLose = () => {
             </div>
           </div>
 
-          <div class="flex items-center flex-row justify-evenly sm:my-2  w-64 h-[10rem] rounded bg-gray-50 dark:bg-white">
+          <div class="flex items-center flex-row justify-evenly sm:my-2  mm:my-2  w-64 h-[10rem] rounded bg-gray-50 dark:bg-white">
             <div className=" bg-rose-300 w-[7rem] h-[7rem] rounded-[100rem]">
             <img src={four} alt="three" className='align-baseline m-6 w-[4rem] h-[4rem]'/>
             </div>
