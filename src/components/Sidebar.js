@@ -3,13 +3,50 @@ import close from "../assets/close.png"
 
 export const Sidebar = () => {
    const [sidebar, setSidebar] = useState(false);
-   const show='fixed top-0 left-0 z-40 w-64 h-screen block'
-   const hide='fixed top-0 left-0 z-40 w-64 h-screen hidden'
+   const show = 'fixed top-0 left-0 z-40 w-64 h-screen block'
+   const hide = 'fixed top-0 left-0 z-40 w-64 h-screen hidden'
+
+   const [isOpenProduct, setIsOpenProduct] = useState(false);
+   const [isRoatedProduct, setIsRotatedProduct] = useState(true);
+   const toggleDropdownProduct = () => {
+      setIsOpenProduct(!isOpenProduct);
+      setIsRotatedProduct(!isRoatedProduct);
+   };
+
+   const [isOpenCustomers, setIsOpenCustomers] = useState(false);
+   const [isRoatedCustomers, setIsRotatedCustomers] = useState(true);
+   const toggleDropdownCustomers = () => {
+      setIsOpenCustomers(!isOpenCustomers);
+      setIsRotatedCustomers(!isRoatedCustomers);
+   };
+
+   const [isOpenIncome, setIsOpenIncome] = useState(false);
+   const [isRoatedIncome, setIsRotatedIncome] = useState(true);
+   const toggleDropdownIncome = () => {
+      setIsOpenIncome(!isOpenIncome);
+      setIsRotatedIncome(!isRoatedIncome);
+   };
+
+   const [isOpenPromote, setIsOpenPromote] = useState(false);
+   const [isRoatedPromote, setIsRotatedPromote] = useState(true);
+   const toggleDropdownPromote = () => {
+      setIsOpenPromote(!isOpenPromote);
+      setIsRotatedPromote(!isRoatedPromote);
+   };
+
+   const [isOpenHelp, setIsOpenHelp] = useState(false);
+   const [isRoatedHelp, setIsRotatedHelp] = useState(true);
+   const toggleDropdownHelp = () => {
+      setIsOpenHelp(!isOpenHelp);
+      setIsRotatedHelp(!isRoatedHelp);
+   };
+
+
    return (
       <Fragment>
 
          <button
-            onClick={()=>setSidebar(false)}
+            onClick={() => setSidebar(false)}
             data-drawer-target="logo-sidebar"
             data-drawer-toggle="logo-sidebar" aria-controls="logo-sidebar" type="button" class=" inline-flex items-center p-2 mt-2 ml-3 text-sm w-fit h-fit rounded-lg  focus:outline-none focus:ring-2 text-indigo-800 border-2 border-indigo-800 hover:bg-indigo-700 focus:ring-indigo-600 focus:text-indigo-200">
             <span class="sr-only">Open sidebar</span>
@@ -18,19 +55,19 @@ export const Sidebar = () => {
             </svg>
          </button>
          <div >
-         {/* ${sidebar} ? 'sm:translate-x-full': 'sm:translate-x-0' */}
-            <aside id="logo-sidebar" class={sidebar ?  hide : show}  aria-label="Sidebar">
+            {/* ${sidebar} ? 'sm:translate-x-full': 'sm:translate-x-0' */}
+            <aside id="logo-sidebar" class={sidebar ? hide : show} aria-label="Sidebar">
                <div class="h-screen px-3 py-4 overflow-y-auto  bg-indigo-950 flex justify-between flex-col ">
                   <div className='mt-6'>
-                    <div className="flex flex-row justify-between align-baseline">
-                    <a href="/" class="flex items-center pl-2.5 mb-5">
-                        <img width="24" height="24" src="https://img.icons8.com/android/24/FFFFFF/google-earth.png" alt="google-earth" />
-                        <span class="self-center text-xl ml-1 font-semibold whitespace-nowrap text-white">Dashboard</span>
-                     </a>
-                     
-                     <img src={close} alt="close"  className={`w-10 h-10 close_btn`} onClick={()=>setSidebar(true)} />
-                     
-                    </div>
+                     <div className="flex flex-row justify-between align-baseline">
+                        <a href="/" class="flex items-center pl-2.5 mb-5">
+                           <img width="24" height="24" src="https://img.icons8.com/android/24/FFFFFF/google-earth.png" alt="google-earth" />
+                           <span class="self-center text-xl ml-1 font-semibold whitespace-nowrap text-white">Dashboard</span>
+                        </a>
+
+                        <img src={close} alt="close" className={`w-10 h-10 close_btn`} onClick={() => setSidebar(true)} />
+
+                     </div>
                      <ul class="space-y-2 font-medium mt-10">
                         <li>
                            <a href="/" class="flex items-center p-2 rounded-lg text-white hover:bg-indigo-800	 group">
@@ -43,108 +80,108 @@ export const Sidebar = () => {
                         </li>
 
                         <li>
-                           <button type="button" class="flex items-center w-full p-2 text-base  transition duration-75 rounded-lg group hover:bg-indigo-800 text-white" aria-controls="dropdown-example" data-collapse-toggle="dropdown-example">
+                           <button onClick={toggleDropdownProduct} type="button" class="flex items-center w-full p-2 text-base  transition duration-75 rounded-lg group hover:bg-indigo-800 text-white" aria-controls="dropdown-example" data-collapse-toggle="dropdown-example">
                               <img class="flex-shrink-0 w-7 h-7  transition duration-75 text-gray-400 group-hover:text-white" src="https://img.icons8.com/sf-regular/48/EBEBEB/product.png" alt="product" />
                               <span class="flex-1 ml-3 text-left whitespace-nowrap">Product</span>
-                              <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                              <svg className={`w-3 h-3 ${isRoatedProduct ? '' : 'rotate-180'}`} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
                               </svg>
                            </button>
-                           <ul id="dropdown-example" class="hidden py-2 space-y-2">
+                           <ul id="dropdown-example" className={`py-2 space-y-2 ${isOpenProduct ? '' : 'hidden'}`}>
                               <li>
-                                 <a href="/" class="flex items-center w-full p-2  transition duration-75 rounded-lg pl-11 group  text-white hover:bg-gray-700">Products</a>
+                                 <a href="/" class="flex items-center w-full p-2  transition duration-75 rounded-lg pl-11 group  text-white hover:bg-indigo-600">Products</a>
                               </li>
                               <li>
-                                 <a href="/" class="flex items-center w-full p-2  transition duration-75 rounded-lg pl-11 group  text-white hover:bg-gray-700">Billing</a>
+                                 <a href="/" class="flex items-center w-full p-2  transition duration-75 rounded-lg pl-11 group  text-white hover:bg-indigo-600">Billing</a>
                               </li>
                               <li>
-                                 <a href="/" class="flex items-center w-full p-2  transition duration-75 rounded-lg pl-11 group  text-white hover:bg-gray-700">Invoice</a>
+                                 <a href="/" class="flex items-center w-full p-2  transition duration-75 rounded-lg pl-11 group  text-white hover:bg-indigo-600">Invoice</a>
                               </li>
                            </ul>
                         </li>
 
                         <li>
-                           <button type="button" class="flex items-center w-full p-2 text-base  transition duration-75 rounded-lg group  text-white hover:bg-indigo-800" aria-controls="dropdown-example" data-collapse-toggle="dropdown-example">
+                           <button onClick={toggleDropdownCustomers} type="button" class="flex items-center w-full p-2 text-base  transition duration-75 rounded-lg group  text-white hover:bg-indigo-800" aria-controls="dropdown-example" data-collapse-toggle="dropdown-example">
                               <img class="flex-shrink-0 w-7 h-7 " src="https://img.icons8.com/dotty/80/FFFFFF/gender-neutral-user.png" alt="gender-neutral-user" />
                               <span class="flex-1 ml-3 text-left whitespace-nowrap">Customers</span>
-                              <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                              <svg className={`w-3 h-3 ${isRoatedCustomers ? '' : 'rotate-180'}`} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
                               </svg>
                            </button>
-                           <ul id="dropdown-example" class="hidden py-2 space-y-2">
+                           <ul id="dropdown-example" className={`py-2 space-y-2 ${isOpenCustomers ? '' : 'hidden'}`}>
                               <li>
-                                 <a href="/" class="flex items-center w-full p-2  transition duration-75 rounded-lg pl-11 group  text-white hover:bg-gray-700">Products</a>
+                                 <a href="/" class="flex items-center w-full p-2  transition duration-75 rounded-lg pl-11 group  text-white hover:bg-indigo-600">Products</a>
                               </li>
                               <li>
-                                 <a href="/" class="flex items-center w-full p-2  transition duration-75 rounded-lg pl-11 group  text-white hover:bg-gray-700">Billing</a>
+                                 <a href="/" class="flex items-center w-full p-2  transition duration-75 rounded-lg pl-11 group  text-white hover:bg-indigo-600">Billing</a>
                               </li>
                               <li>
-                                 <a href="/" class="flex items-center w-full p-2  transition duration-75 rounded-lg pl-11 group  text-white hover:bg-gray-700">Invoice</a>
+                                 <a href="/" class="flex items-center w-full p-2  transition duration-75 rounded-lg pl-11 group  text-white hover:bg-indigo-600">Invoice</a>
                               </li>
                            </ul>
                         </li>
 
 
                         <li>
-                           <button type="button" class="flex items-center w-full p-2 text-base  transition duration-75 rounded-lg group  text-white hover:bg-indigo-800" aria-controls="dropdown-example" data-collapse-toggle="dropdown-example">
+                           <button onClick={toggleDropdownIncome} type="button" class="flex items-center w-full p-2 text-base  transition duration-75 rounded-lg group  text-white hover:bg-indigo-800" aria-controls="dropdown-example" data-collapse-toggle="dropdown-example">
                               <img class="flex-shrink-0 w-7 h-7 text-gray-500 transition duration-75 group-hover: dark:text-gray-400 dark:group-hover:text-white" src="https://img.icons8.com/pastel-glyph/64/FFFFFF/financial-growth.png" alt="financial-growth" />
                               <span class="flex-1 ml-3 text-left whitespace-nowrap">Income</span>
-                              <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                              <svg className={`w-3 h-3 ${isRoatedIncome ? '' : 'rotate-180'}`} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
                               </svg>
                            </button>
-                           <ul id="dropdown-example" class="hidden py-2 space-y-2">
+                           <ul id="dropdown-example" className={`py-2 space-y-2 ${isOpenIncome ? '' : 'hidden'}`}>
                               <li>
-                                 <a href="/" class="flex items-center w-full p-2  transition duration-75 rounded-lg pl-11 group  text-white hover:bg-gray-700">Products</a>
+                                 <a href="/" class="flex items-center w-full p-2  transition duration-75 rounded-lg pl-11 group  text-white hover:bg-indigo-600">Products</a>
                               </li>
                               <li>
-                                 <a href="/" class="flex items-center w-full p-2  transition duration-75 rounded-lg pl-11 group  text-white hover:bg-gray-700">Billing</a>
+                                 <a href="/" class="flex items-center w-full p-2  transition duration-75 rounded-lg pl-11 group  text-white hover:bg-indigo-600">Billing</a>
                               </li>
                               <li>
-                                 <a href="/" class="flex items-center w-full p-2  transition duration-75 rounded-lg pl-11 group  text-white hover:bg-gray-700">Invoice</a>
+                                 <a href="/" class="flex items-center w-full p-2  transition duration-75 rounded-lg pl-11 group  text-white hover:bg-indigo-600">Invoice</a>
                               </li>
                            </ul>
                         </li>
 
 
                         <li>
-                           <button type="button" class="flex items-center w-full p-2 text-base  transition duration-75 rounded-lg group  text-white hover:bg-indigo-800" aria-controls="dropdown-example" data-collapse-toggle="dropdown-example">
+                           <button onClick={toggleDropdownPromote} type="button" class="flex items-center w-full p-2 text-base  transition duration-75 rounded-lg group  text-white hover:bg-indigo-800" aria-controls="dropdown-example" data-collapse-toggle="dropdown-example">
                               <img class="flex-shrink-0 w-7 h-7 text-gray-500 transition duration-75 group-hover: dark:text-gray-400 dark:group-hover:text-white" src="https://img.icons8.com/ios/50/FFFFFF/discount--v1.png" alt="discount--v1" />
                               <span class="flex-1 ml-3 text-left whitespace-nowrap">Promote</span>
-                              <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                              <svg className={`w-3 h-3 ${isRoatedPromote ? '' : 'rotate-180'}`} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
                               </svg>
                            </button>
-                           <ul id="dropdown-example" class="hidden py-2 space-y-2">
+                           <ul id="dropdown-example" className={`py-2 space-y-2 ${isOpenPromote ? '' : 'hidden'}`}>
                               <li>
-                                 <a href="/" class="flex items-center w-full p-2  transition duration-75 rounded-lg pl-11 group  text-white hover:bg-gray-700">Products</a>
+                                 <a href="/" class="flex items-center w-full p-2  transition duration-75 rounded-lg pl-11 group  text-white hover:bg-indigo-600">Products</a>
                               </li>
                               <li>
-                                 <a href="/" class="flex items-center w-full p-2  transition duration-75 rounded-lg pl-11 group  text-white hover:bg-gray-700">Billing</a>
+                                 <a href="/" class="flex items-center w-full p-2  transition duration-75 rounded-lg pl-11 group  text-white hover:bg-indigo-600">Billing</a>
                               </li>
                               <li>
-                                 <a href="/" class="flex items-center w-full p-2  transition duration-75 rounded-lg pl-11 group  text-white hover:bg-gray-700">Invoice</a>
+                                 <a href="/" class="flex items-center w-full p-2  transition duration-75 rounded-lg pl-11 group  text-white hover:bg-indigo-600">Invoice</a>
                               </li>
                            </ul>
                         </li>
 
                         <li>
-                           <button type="button" class="flex items-center w-full p-2 text-base  transition duration-75 rounded-lg group  text-white hover:bg-indigo-800" aria-controls="dropdown-example" data-collapse-toggle="dropdown-example">
+                           <button onClick={toggleDropdownHelp} type="button" class="flex items-center w-full p-2 text-base  transition duration-75 rounded-lg group  text-white hover:bg-indigo-800" aria-controls="dropdown-example" data-collapse-toggle="dropdown-example">
                               <img class="flex-shrink-0 w-7 h-7 text-gray-500 transition duration-75 group-hover: dark:text-gray-400 dark:group-hover:text-white" src="https://img.icons8.com/carbon-copy/100/FFFFFF/help.png" alt="help" />
                               <span class="flex-1 ml-3 text-left whitespace-nowrap">Help</span>
-                              <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                              <svg className={`w-3 h-3 ${isRoatedHelp ? '' : 'rotate-180'}`} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
                               </svg>
                            </button>
-                           <ul id="dropdown-example" class="hidden py-2 space-y-2">
+                           <ul id="dropdown-example" className={`py-2 space-y-2 ${isOpenHelp ? '' : 'hidden'}`}>
                               <li>
-                                 <a href="/" class="flex items-center w-full p-2  transition duration-75 rounded-lg pl-11 group  text-white hover:bg-gray-700">Products</a>
+                                 <a href="/" class="flex items-center w-full p-2  transition duration-75 rounded-lg pl-11 group  text-white hover:bg-indigo-600">Products</a>
                               </li>
                               <li>
-                                 <a href="/" class="flex items-center w-full p-2  transition duration-75 rounded-lg pl-11 group  text-white hover:bg-gray-700">Billing</a>
+                                 <a href="/" class="flex items-center w-full p-2  transition duration-75 rounded-lg pl-11 group  text-white hover:bg-indigo-600">Billing</a>
                               </li>
                               <li>
-                                 <a href="/" class="flex items-center w-full p-2  transition duration-75 rounded-lg pl-11 group  text-white hover:bg-gray-700">Invoice</a>
+                                 <a href="/" class="flex items-center w-full p-2  transition duration-75 rounded-lg pl-11 group  text-white hover:bg-indigo-600">Invoice</a>
                               </li>
                            </ul>
                         </li>
