@@ -6,40 +6,22 @@ export const Sidebar = () => {
    const show = 'fixed top-0 left-0 z-40 w-64 h-screen block'
    const hide = 'fixed top-0 left-0 z-40 w-64 h-screen hidden'
 
-   const [isOpenProduct, setIsOpenProduct] = useState(false);
-   const [isRoatedProduct, setIsRotatedProduct] = useState(true);
-   const toggleDropdownProduct = () => {
-      setIsOpenProduct(!isOpenProduct);
-      setIsRotatedProduct(!isRoatedProduct);
-   };
-
-   const [isOpenCustomers, setIsOpenCustomers] = useState(false);
-   const [isRoatedCustomers, setIsRotatedCustomers] = useState(true);
-   const toggleDropdownCustomers = () => {
-      setIsOpenCustomers(!isOpenCustomers);
-      setIsRotatedCustomers(!isRoatedCustomers);
-   };
-
-   const [isOpenIncome, setIsOpenIncome] = useState(false);
-   const [isRoatedIncome, setIsRotatedIncome] = useState(true);
-   const toggleDropdownIncome = () => {
-      setIsOpenIncome(!isOpenIncome);
-      setIsRotatedIncome(!isRoatedIncome);
-   };
-
-   const [isOpenPromote, setIsOpenPromote] = useState(false);
-   const [isRoatedPromote, setIsRotatedPromote] = useState(true);
-   const toggleDropdownPromote = () => {
-      setIsOpenPromote(!isOpenPromote);
-      setIsRotatedPromote(!isRoatedPromote);
-   };
-
-   const [isOpenHelp, setIsOpenHelp] = useState(false);
-   const [isRoatedHelp, setIsRotatedHelp] = useState(true);
-   const toggleDropdownHelp = () => {
-      setIsOpenHelp(!isOpenHelp);
-      setIsRotatedHelp(!isRoatedHelp);
-   };
+   const initialDropdowns = {
+      product: false,
+      customers: false,
+      income: false,
+      promote: false,
+      help: false,
+    };
+  
+    const [dropdowns, setDropdowns] = useState(initialDropdowns);
+  
+    const toggleDropdown = (key) => {
+      setDropdowns((prevState) => ({
+        ...prevState,
+        [key]: !prevState[key],
+      }));
+    };
 
 
    return (
@@ -80,14 +62,14 @@ export const Sidebar = () => {
                         </li>
 
                         <li>
-                           <button onClick={toggleDropdownProduct} type="button" class="flex items-center w-full p-2 text-base  transition duration-75 rounded-lg group hover:bg-indigo-800 text-white" aria-controls="dropdown-example" data-collapse-toggle="dropdown-example">
+                        <button onClick={() => toggleDropdown('product')} type="button" className="flex items-center w-full p-2 text-base transition duration-75 rounded-lg group hover:bg-indigo-800 text-white" aria-controls="dropdown-example" data-collapse-toggle="dropdown-example">
                               <img class="flex-shrink-0 w-7 h-7  transition duration-75 text-gray-400 group-hover:text-white" src="https://img.icons8.com/sf-regular/48/EBEBEB/product.png" alt="product" />
                               <span class="flex-1 ml-3 text-left whitespace-nowrap">Product</span>
-                              <svg className={`w-3 h-3 ${isRoatedProduct ? '' : 'rotate-180'}`} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                              <svg className={`w-3 h-3 ${dropdowns.product ? '' : 'rotate-180'}`} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
                               </svg>
                            </button>
-                           <ul id="dropdown-example" className={`py-2 space-y-2 ${isOpenProduct ? '' : 'hidden'}`}>
+                           <ul id="dropdown-example" className={`py-2 space-y-2 ${dropdowns.product ? '' : 'hidden'}`}>
                               <li>
                                  <a href="/" class="flex items-center w-full p-2  transition duration-75 rounded-lg pl-11 group  text-white hover:bg-indigo-600">Products</a>
                               </li>
@@ -101,14 +83,14 @@ export const Sidebar = () => {
                         </li>
 
                         <li>
-                           <button onClick={toggleDropdownCustomers} type="button" class="flex items-center w-full p-2 text-base  transition duration-75 rounded-lg group  text-white hover:bg-indigo-800" aria-controls="dropdown-example" data-collapse-toggle="dropdown-example">
+                        <button onClick={() => toggleDropdown('customers')} type="button" className="flex items-center w-full p-2 text-base transition duration-75 rounded-lg group text-white hover:bg-indigo-800" aria-controls="dropdown-example" data-collapse-toggle="dropdown-example">
                               <img class="flex-shrink-0 w-7 h-7 " src="https://img.icons8.com/dotty/80/FFFFFF/gender-neutral-user.png" alt="gender-neutral-user" />
                               <span class="flex-1 ml-3 text-left whitespace-nowrap">Customers</span>
-                              <svg className={`w-3 h-3 ${isRoatedCustomers ? '' : 'rotate-180'}`} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                              <svg className={`w-3 h-3 ${dropdowns.customers ? '' : 'rotate-180'}`} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
                               </svg>
                            </button>
-                           <ul id="dropdown-example" className={`py-2 space-y-2 ${isOpenCustomers ? '' : 'hidden'}`}>
+                           <ul id="dropdown-example" className={`py-2 space-y-2 ${dropdowns.customers ? '' : 'hidden'}`}>
                               <li>
                                  <a href="/" class="flex items-center w-full p-2  transition duration-75 rounded-lg pl-11 group  text-white hover:bg-indigo-600">Products</a>
                               </li>
@@ -123,14 +105,14 @@ export const Sidebar = () => {
 
 
                         <li>
-                           <button onClick={toggleDropdownIncome} type="button" class="flex items-center w-full p-2 text-base  transition duration-75 rounded-lg group  text-white hover:bg-indigo-800" aria-controls="dropdown-example" data-collapse-toggle="dropdown-example">
+                        <button onClick={() => toggleDropdown('income')} type="button" class="flex items-center w-full p-2 text-base  transition duration-75 rounded-lg group  text-white hover:bg-indigo-800" aria-controls="dropdown-example" data-collapse-toggle="dropdown-example">
                               <img class="flex-shrink-0 w-7 h-7 text-gray-500 transition duration-75 group-hover: dark:text-gray-400 dark:group-hover:text-white" src="https://img.icons8.com/pastel-glyph/64/FFFFFF/financial-growth.png" alt="financial-growth" />
                               <span class="flex-1 ml-3 text-left whitespace-nowrap">Income</span>
-                              <svg className={`w-3 h-3 ${isRoatedIncome ? '' : 'rotate-180'}`} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                              <svg className={`w-3 h-3 ${dropdowns.income ? '' : 'rotate-180'}`} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
                               </svg>
                            </button>
-                           <ul id="dropdown-example" className={`py-2 space-y-2 ${isOpenIncome ? '' : 'hidden'}`}>
+                           <ul id="dropdown-example" className={`py-2 space-y-2 ${dropdowns.income ? '' : 'hidden'}`}>
                               <li>
                                  <a href="/" class="flex items-center w-full p-2  transition duration-75 rounded-lg pl-11 group  text-white hover:bg-indigo-600">Products</a>
                               </li>
@@ -145,14 +127,14 @@ export const Sidebar = () => {
 
 
                         <li>
-                           <button onClick={toggleDropdownPromote} type="button" class="flex items-center w-full p-2 text-base  transition duration-75 rounded-lg group  text-white hover:bg-indigo-800" aria-controls="dropdown-example" data-collapse-toggle="dropdown-example">
+                        <button onClick={() => toggleDropdown('promote')} type="button" class="flex items-center w-full p-2 text-base  transition duration-75 rounded-lg group  text-white hover:bg-indigo-800" aria-controls="dropdown-example" data-collapse-toggle="dropdown-example">
                               <img class="flex-shrink-0 w-7 h-7 text-gray-500 transition duration-75 group-hover: dark:text-gray-400 dark:group-hover:text-white" src="https://img.icons8.com/ios/50/FFFFFF/discount--v1.png" alt="discount--v1" />
                               <span class="flex-1 ml-3 text-left whitespace-nowrap">Promote</span>
-                              <svg className={`w-3 h-3 ${isRoatedPromote ? '' : 'rotate-180'}`} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                              <svg className={`w-3 h-3 ${dropdowns.promote ? '' : 'rotate-180'}`} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
                               </svg>
                            </button>
-                           <ul id="dropdown-example" className={`py-2 space-y-2 ${isOpenPromote ? '' : 'hidden'}`}>
+                           <ul id="dropdown-example" className={`py-2 space-y-2 ${dropdowns.promote ? '' : 'hidden'}`}>
                               <li>
                                  <a href="/" class="flex items-center w-full p-2  transition duration-75 rounded-lg pl-11 group  text-white hover:bg-indigo-600">Products</a>
                               </li>
@@ -166,14 +148,14 @@ export const Sidebar = () => {
                         </li>
 
                         <li>
-                           <button onClick={toggleDropdownHelp} type="button" class="flex items-center w-full p-2 text-base  transition duration-75 rounded-lg group  text-white hover:bg-indigo-800" aria-controls="dropdown-example" data-collapse-toggle="dropdown-example">
+                        <button onClick={() => toggleDropdown('help')} type="button" class="flex items-center w-full p-2 text-base  transition duration-75 rounded-lg group  text-white hover:bg-indigo-800" aria-controls="dropdown-example" data-collapse-toggle="dropdown-example">
                               <img class="flex-shrink-0 w-7 h-7 text-gray-500 transition duration-75 group-hover: dark:text-gray-400 dark:group-hover:text-white" src="https://img.icons8.com/carbon-copy/100/FFFFFF/help.png" alt="help" />
                               <span class="flex-1 ml-3 text-left whitespace-nowrap">Help</span>
-                              <svg className={`w-3 h-3 ${isRoatedHelp ? '' : 'rotate-180'}`} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                              <svg className={`w-3 h-3 ${dropdowns.help ? '' : 'rotate-180'}`} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
                               </svg>
                            </button>
-                           <ul id="dropdown-example" className={`py-2 space-y-2 ${isOpenHelp ? '' : 'hidden'}`}>
+                           <ul id="dropdown-example" className={`py-2 space-y-2 ${dropdowns.help ? '' : 'hidden'}`}>
                               <li>
                                  <a href="/" class="flex items-center w-full p-2  transition duration-75 rounded-lg pl-11 group  text-white hover:bg-indigo-600">Products</a>
                               </li>
